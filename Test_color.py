@@ -12,7 +12,7 @@ from utils import utils_image as util
 #ParsingArguments
 parser=argparse.ArgumentParser()
 parser.add_argument('--dataPath',dest='dataPath',type=str,default='./Testing_data/CBSD68',help='testDataPath')
-parser.add_argument('--weightsPath',dest='weightsPath',type=str,default='./Pretrained_models/MFEBDN_Color.h5',help='pathOfTrainedCNN')
+parser.add_argument('--weightsPath',dest='weightsPath',type=str,default='./Pretrained_models/BGRRN_Color.h5',help='pathOfTrainedCNN')
 args=parser.parse_args()
 #createModel, loadWeights
 def custom_loss(y_true,y_pred): #this is required for loading a keras-model created with custom-loss
@@ -47,7 +47,7 @@ for i in range(0,lenth):
     z=(predClean)
     cv2.imwrite("./Test_Results/Color/"+str(i+1)+"_Original.png",255.*img1)
     cv2.imwrite("./Test_Results/Color/"+str(i+1)+"_Noisy.png",255.*f)
-    cv2.imwrite("./Test_Results/Color/"+str(i+1)+"_MFEBDN_Color.png",255.*z)
+    cv2.imwrite("./Test_Results/Color/"+str(i+1)+"_BGRRN_Color.png",255.*z)
     psnr_val[i]=util.calculate_psnr(255.*z,255.*img1)
     ssim_val[i]=util.calculate_ssim(255.*z,255.*img1)
     print('PSNR of image '+str(i+1)+' is ',psnr_val[i])
