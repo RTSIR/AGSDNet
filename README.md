@@ -1,4 +1,4 @@
-# BGRRN
+# FLBGDNet
 This repo contains the KERAS implementation of "Fast Lightweight Blind Gaussian Denoiser using Feature Denoising based Deep Residual Network(FLBGDNet)"
 
 
