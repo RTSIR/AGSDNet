@@ -1,17 +1,16 @@
 # BGRRN
-This repo contains the KERAS implementation of "Identical Module based Blind Gaussian Denoiser
-using Deep Residual Network(BGRRN)"
+This repo contains the KERAS implementation of "Fast Lightweight Blind Gaussian Denoiser using Feature Denoising based Deep Residual Network(FLBGDNet)"
 
 
 Run Experiments
 
-To test for blind Gray denoising using BGRRN write:
+To test for blind Gray denoising using FLBGDNet write:
 
 python Test_Gray.py
 
 The resultant images will be stored in 'Test_Results/Gray/'
 
-To test for blind Color denoising using BGRRN write:
+To test for blind Color denoising using FLBGDNet write:
 
 python Test_Color.py
 
