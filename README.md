@@ -1,19 +1,12 @@
-# FLBGDNet
-This repo contains the KERAS implementation of "Fast Lightweight Blind Gaussian Denoiser using Feature Denoising based Deep Residual Network(FLBGDNet)"
-
+# SIFSDNet
+This repo contains the KERAS implementation of "SIFSDNET: SHARP IMAGE FEATURE BASED SAR DENOISING NETWORK"
 
 # Run Experiments
 
-To test for blind Gray denoising using FLBGDNet write:
+To test for SAR denoising using SIFSDNet write:
 
-python Test_gray.py
+python Test_SAR.py
 
-The resultant images will be stored in 'Test_Results/Gray/'
+The resultant images will be stored in 'Test_Results/'
 
-To test for blind Color denoising using FLBGDNet write:
-
-python Test_color.py
-
-The resultant images will be stored in 'Test_Results/Color/'
-
-Image wise PSNR & SSIM as well as Average PSNR & Average SSIM for the whole image database is also displayed in the console as output.
+Image wise ENL for the whole image database will also be displayed in the console as output.
