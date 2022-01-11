@@ -2,10 +2,10 @@
 import os
 
 #default number of epochs
-epochs=20
+epochs=24
 
 #default batch size for training
-batch_size=128
+batch_size=32
 
 #noise-level for training
 sigma=25.0  #change it according to noise level in your dataset
@@ -20,6 +20,6 @@ save_dir='./trainingPatch/'
 data='./trainingPatch/img_clean_pats.npy'
 
 #variables required to generate patch
-pat_size=40
+pat_size=30
 stride=10
 step=0
