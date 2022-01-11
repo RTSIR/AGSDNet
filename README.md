@@ -18,3 +18,5 @@ python Test_Synthetic.py
 The resultant images will be stored in 'Test_Results/Synthetic/'
 
 Image wise PSNR & SSIM as well as Average PSNR & Average SSIM for the whole image database will also be displayed in the console as output.
+
+# SIFSDNet SAR image denoising comparison
