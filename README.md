@@ -2,17 +2,17 @@
 This repo contains the KERAS implementation of "Fast Lightweight Blind Gaussian Denoiser using Feature Denoising based Deep Residual Network(FLBGDNet)"
 
 
-Run Experiments
+# Run Experiments
 
 To test for blind Gray denoising using FLBGDNet write:
 
-python Test_Gray.py
+python Test_gray.py
 
 The resultant images will be stored in 'Test_Results/Gray/'
 
 To test for blind Color denoising using FLBGDNet write:
 
-python Test_Color.py
+python Test_color.py
 
 The resultant images will be stored in 'Test_Results/Color/'
 
