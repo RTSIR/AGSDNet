@@ -34,7 +34,7 @@ def my_Vfilter(shape, dtype=None):
 #ParsingArguments
 parser=argparse.ArgumentParser()
 parser.add_argument('--dataPath',dest='dataPath',type=str,default='./Testing_data/SAR',help='testDataPath')
-parser.add_argument('--weightsPath',dest='weightsPath',type=str,default='./Pretrained_models/AGSDNet_SAR.h5',help='pathOfTrainedCNN')
+parser.add_argument('--weightsPath',dest='weightsPath',type=str,default='./Pretrained_models/AGSDNet.h5',help='pathOfTrainedCNN')
 args=parser.parse_args()
 #createModel, loadWeights
 def custom_loss(y_true,y_pred): #this is required for loading a keras-model created with custom-loss
