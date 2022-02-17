@@ -13,19 +13,32 @@ import tensorflow.keras.backend as K
 from matplotlib import pyplot as plt
 import scipy.io
 from scipy import ndimage
-#import hdf5storage
 from tifffile import imwrite
 from utils import utils_image as util
 from PIL import Image
 import skimage.feature
 from skimage.util import random_noise
 
+gpus = tf.config.experimental.list_physical_devices('GPU') 
+for gpu in gpus: 
+	tf.config.experimental.set_memory_growth(gpu, True)
 # custom filter
-def my_Sfilter(shape, dtype=None):
-    f = (1/16) * np.array([
+def my_Hfilter(shape, dtype=None):
+
+    f = np.array([
+            [[[-1]], [[0]], [[1]]],
+            [[[-2]], [[0]], [[2]]],
+            [[[-1]], [[0]], [[1]]]
+        ])
+    assert f.shape == shape
+    return K.variable(f, dtype='float32')
+    
+def my_Vfilter(shape, dtype=None):
+
+    f = np.array([
             [[[-1]], [[-2]], [[-1]]],
-            [[[-2]], [[12]], [[-2]]],
-            [[[-1]], [[-2]], [[-1]]]
+            [[[0]], [[0]], [[0]]],
+            [[[1]], [[2]], [[1]]]
         ])
     assert f.shape == shape
     return K.variable(f, dtype='float32')
@@ -41,7 +54,7 @@ def custom_loss(y_true,y_pred): #this is required for loading a keras-model crea
     res=(diff)/(config.batch_size)
     return res
 
-nmodel_PROPOSED=load_model(args.weightsPath,custom_objects={'my_Sfilter': my_Sfilter,'custom_loss':custom_loss})
+nmodel_PROPOSED=load_model(args.weightsPath,custom_objects={'my_Hfilter': my_Hfilter,'my_Vfilter': my_Vfilter,'custom_loss':custom_loss})
 print('Trained Model is loaded')
 
 #createArrayOfTestImages
