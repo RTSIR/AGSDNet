@@ -6,7 +6,27 @@ import numpy as np
 import argparse
 from pathlib import Path
 import tensorflow.keras.backend as K
-import tensorflow as tf
+
+# custom filter
+def my_Hfilter(shape, dtype=None):
+
+    f = np.array([
+            [[[-1]], [[0]], [[1]]],
+            [[[-2]], [[0]], [[2]]],
+            [[[-1]], [[0]], [[1]]]
+        ])
+    assert f.shape == shape
+    return K.variable(f, dtype='float32')
+    
+def my_Vfilter(shape, dtype=None):
+
+    f = np.array([
+            [[[-1]], [[-2]], [[-1]]],
+            [[[0]], [[0]], [[0]]],
+            [[[1]], [[2]], [[1]]]
+        ])
+    assert f.shape == shape
+    return K.variable(f, dtype='float32')
 
 #ParsingArguments
 parser=argparse.ArgumentParser()
@@ -15,11 +35,12 @@ parser.add_argument('--weightsPath',dest='weightsPath',type=str,default='./Pretr
 args=parser.parse_args()
 #createModel, loadWeights
 def custom_loss(y_true,y_pred): #this is required for loading a keras-model created with custom-loss
-    diff=K.abs(y_true-y_pred)
+    diff=abs(y_true-y_pred)
     res=(diff)/(config.batch_size)
     return res
 
-nmodel_PROPOSED=load_model(args.weightsPath,custom_objects={'custom_loss':custom_loss})
+nmodel_PROPOSED=load_model(args.weightsPath,custom_objects={'my_Hfilter': my_Hfilter,'my_Vfilter': my_Vfilter,'custom_loss':custom_loss})
+
 print('Trained Model is loaded')
 
 def ENL(img):
