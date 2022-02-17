@@ -10,8 +10,8 @@ import tensorflow as tf
 
 #ParsingArguments
 parser=argparse.ArgumentParser()
-parser.add_argument('--dataPath',dest='dataPath',type=str,default='./Testing_data/Synthetic',help='testDataPath')
-parser.add_argument('--weightsPath',dest='weightsPath',type=str,default='./Pretrained_models/SIFSDNet_SAR.h5',help='pathOfTrainedCNN')
+parser.add_argument('--dataPath',dest='dataPath',type=str,default='./Testing_data/SAR',help='testDataPath')
+parser.add_argument('--weightsPath',dest='weightsPath',type=str,default='./Pretrained_models/AGSDNet_SAR.h5',help='pathOfTrainedCNN')
 args=parser.parse_args()
 #createModel, loadWeights
 def custom_loss(y_true,y_pred): #this is required for loading a keras-model created with custom-loss
@@ -47,6 +47,6 @@ for i in range(0,lenth):
     img1=imgTestArray[i]
     z=np.squeeze(nmodel_PROPOSED.predict(np.expand_dims(img1,axis=0)))
     cv2.imwrite("./Test_Results/SAR/"+str(i+1)+"_Original.png",255.*img1)
-    cv2.imwrite("./Test_Results/SAR/"+str(i+1)+"_SIFSDNet.png",255.*z)
+    cv2.imwrite("./Test_Results/SAR/"+str(i+1)+"_AGSDNet.png",255.*z)
     enl=ENL(z)
     print('ENL of image '+str(i+1)+' is ',enl)
