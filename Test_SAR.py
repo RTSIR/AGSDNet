@@ -7,6 +7,9 @@ import argparse
 from pathlib import Path
 import tensorflow.keras.backend as K
 
+os.environ["CUDA_VISIBLE_DEVICES"]="7"
+tf_device='/gpu:7'
+
 # custom filter
 def my_Hfilter(shape, dtype=None):
 
