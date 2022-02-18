@@ -14,7 +14,8 @@ import tensorflow as tf
 from numpy import *
 import random
 from skimage.util import random_noise
-
+os.environ["CUDA_VISIBLE_DEVICES"]="7"
+tf_device='/gpu:7'
 # custom filter
 def my_Hfilter(shape, dtype=None):
 
@@ -120,24 +121,20 @@ def myFlow(generator,X):
         for j in range(0,looks):
             stack[:,:,:,:,j] = random_noise(batch, mode='speckle') 
         noisyImagesBatch=np.mean(stack,axis=4)
-        #noise=random.randint(0,20)
-        #noisyImagesBatch=random_noise(batch, mode='speckle',var=noise/255.0)
-        #trueNoiseBatch=np.random.normal(0,noise/255.0,batch.shape)
-        #noisyImagesBatch=batch+trueNoiseBatch
         yield(noisyImagesBatch,batch)
 
 # create custom learning rate scheduler
 def lr_decay(epoch):
-    initAlpha=0.001
+    initAlpha=0.0001
     factor=0.5
-    dropEvery=5
+    dropEvery=25
     alpha=initAlpha*(factor ** np.floor((1+epoch)/dropEvery))
     return float(alpha)
 callbacks=[LearningRateScheduler(lr_decay)]
 
 # create custom loss, compile the model
 print("[INFO] compilingTheModel")
-opt=optimizers.Adam(learning_rate=0.001)
+opt=optimizers.Adam(learning_rate=0.0001)
 def custom_loss(y_true,y_pred):
     diff=abs(y_true-y_pred)
     #l1=K.sum(diff)/(config.batch_size)
@@ -150,4 +147,4 @@ model.fit_generator(myFlow(aug,cleanImages),
 epochs=config.epochs,steps_per_epoch=len(cleanImages)//config.batch_size,callbacks=callbacks,verbose=1)
 
 # save the model
-model.save('AGSDNet.h5')
+model.save('./Pretrained_models/AGSDNet.h5')
