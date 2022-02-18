@@ -113,9 +113,7 @@ aug = ImageDataGenerator(rotation_range=30, fill_mode="nearest")
 
 def myFlow(generator,X):
     for batch in generator.flow(x=X,batch_size=config.batch_size,seed=0):
-        #look_list=[2,4,8,10]
         m,n,o,p=batch.shape
-        #looks=random.choice(look_list)
         looks=random.randint(1,21)
         stack=np.zeros((m,n,o,p,looks)) 
         for j in range(0,looks):
