@@ -34,7 +34,13 @@ python AGSDNet_train.py
 This will save the 'AGSDNet.h5' file of in the folder 'Pretrained_models/'.
 
 # AGSDNet architecture image
-![MFEBDN_Architecture](https://user-images.githubusercontent.com/89151608/148807575-b518568c-0079-4e6b-ac8b-29c01972e40e.png)
+![image](https://user-images.githubusercontent.com/89151608/154666534-a00d3de9-37d3-4bd6-9525-3ee6dc9948e4.png)
 
 # AGSDNet synthetic image denoising comparison
-![MFEBDN_Gray_Denoising_Comparison](https://user-images.githubusercontent.com/89151608/148807795-c09c5b4c-5476-4f08-b27e-2c40d95bf035.png)
+![image](https://user-images.githubusercontent.com/89151608/154666800-117660f2-25b8-4ec2-abb9-7eae98f8fbde.png)
+
+# AGSDNet SAR image denoising comparison
+![image](https://user-images.githubusercontent.com/89151608/154667006-01245652-5db0-410f-bc5d-2af9f208c866.png)
+
+Image wise PSNR & SSIM as well as Average PSNR & Average SSIM for the whole image database will also be displayed in the console as output.
+Image wise PSNR & SSIM as well as Average PSNR & Average SSIM for the whole image database will also be displayed in the console as output.
