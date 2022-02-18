@@ -21,7 +21,7 @@ Image wise PSNR & SSIM as well as Average PSNR & Average SSIM for the whole imag
 
 # Train AGSDNet denoising network
 
-To train the AGSDNet denoising network, first download the UC Merced Land Use data and copy the images into genData folder. Then generate the training data using:
+To train the AGSDNet denoising network, first download the UC Merced Land Use data from javascript:win3('UCMerced_LandUse.zip') and copy the images into genData folder. Then generate the training data using:
 
 python generateData.py
 
