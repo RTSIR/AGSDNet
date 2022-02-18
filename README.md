@@ -41,6 +41,3 @@ This will save the 'AGSDNet.h5' file of in the folder 'Pretrained_models/'.
 
 # AGSDNet SAR image denoising comparison
 ![image](https://user-images.githubusercontent.com/89151608/154667006-01245652-5db0-410f-bc5d-2af9f208c866.png)
-
-Image wise PSNR & SSIM as well as Average PSNR & Average SSIM for the whole image database will also be displayed in the console as output.
-Image wise PSNR & SSIM as well as Average PSNR & Average SSIM for the whole image database will also be displayed in the console as output.
