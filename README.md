@@ -33,9 +33,6 @@ python AGSDNet_train.py
 
 This will save the 'AGSDNet.h5' file of in the folder 'Pretrained_models/'.
 
-# AGSDNet architecture image
-![image](https://user-images.githubusercontent.com/89151608/154666534-a00d3de9-37d3-4bd6-9525-3ee6dc9948e4.png)
-
 # AGSDNet synthetic image denoising comparison
 ![image](https://user-images.githubusercontent.com/89151608/154666800-117660f2-25b8-4ec2-abb9-7eae98f8fbde.png)
 
