@@ -1,7 +1,7 @@
 # AGSDNet
 This repo contains the KERAS implementation of "AGSDNet: Attention and Gradient based SAR Denoising Network"
 
-# Run Experiments
+# Run experiments
 
 To test for SAR denoising using AGSDNet write:
 
