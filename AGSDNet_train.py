@@ -14,8 +14,7 @@ import tensorflow as tf
 from numpy import *
 import random
 from skimage.util import random_noise
-os.environ["CUDA_VISIBLE_DEVICES"]="7"
-tf_device='/gpu:7'
+
 # custom filter
 def my_Hfilter(shape, dtype=None):
 
@@ -109,7 +108,7 @@ cleanImages=cleanImages/255.0
 cleanImages=cleanImages.astype('float32')
 
 # define augmentor and create custom flow
-aug = ImageDataGenerator(rotation_range=30, fill_mode="nearest")
+aug = ImageDataGenerator(rotation_range=30, fill_mode="nearest", validation_split=0.2)
 
 def myFlow(generator,X):
     for batch in generator.flow(x=X,batch_size=config.batch_size,seed=0):
