@@ -38,3 +38,14 @@ This will save the 'AGSDNet.h5' file of in the folder 'Pretrained_models/'.
 
 # AGSDNet SAR image denoising comparison
 ![image](https://user-images.githubusercontent.com/89151608/154667006-01245652-5db0-410f-bc5d-2af9f208c866.png)
+
+# Citation
+@article{thakur2022agsdnet,
+  title={AGSDNet: Attention and Gradient-Based SAR Denoising Network},
+  author={Thakur, Ramesh Kumar and Maji, Suman Kumar},
+  journal={IEEE Geoscience and Remote Sensing Letters},
+  volume={19},
+  pages={1--5},
+  year={2022},
+  publisher={IEEE}
+}
