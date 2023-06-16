@@ -27,11 +27,17 @@ python generateData.py
 
 This will save the training patch 'img_clean_pats.npy' in the folder 'trainingPatch/'
 
-Then run the AGSDNet model file using:
+Then run the AGSDNet model file for synthetic image denoising using:
 
-python AGSDNet_train.py
+python AGSDNet_Synthetic.py
 
-This will save the 'AGSDNet.h5' file of in the folder 'Pretrained_models/'.
+This will save the 'AGSDNet_Synthetic.h5' file in the folder 'Pretrained_models/'.
+
+Then run the AGSDNet model file for SAR image denoising using:
+
+python AGSDNet_SAR.py
+
+This will save the 'AGSDNet_SAR.h5' file in the folder 'Pretrained_models/'.
 
 # AGSDNet synthetic image denoising comparison
 ![image](https://user-images.githubusercontent.com/89151608/154666800-117660f2-25b8-4ec2-abb9-7eae98f8fbde.png)
